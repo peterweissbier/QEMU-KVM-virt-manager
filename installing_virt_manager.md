@@ -150,9 +150,9 @@ Windows has a really good partition management utility built into it. Search for
 
 Check the output of virsh uri. If it returns qemu:///session, but you're using a qemu:///system connection in Virt-Manager, change it to qemu:///system like this:
 
-1. edit your .bashrc file via sudo nano $HOME/.bashrc and add
+edit your .bashrc file via sudo nano $HOME/.bashrc and add
 
-export LIBVIRT_DEFAULT_URI="qemu:///system"
+    export LIBVIRT_DEFAULT_URI="qemu:///system"
 
 ### Reference:
 
