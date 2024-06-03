@@ -144,7 +144,9 @@ Find the qcow2 file of the VM and take a backup (just in case).
 
 Windows has a really good partition management utility built into it. Search for `disk management`
 
-Tweaks
+---
+
+### Tweaks
 
 Check the output of virsh uri. If it returns qemu:///session, but you're using a qemu:///system connection in Virt-Manager, change it to qemu:///system like this:
 
