@@ -153,6 +153,34 @@ edit your .bashrc file via sudo nano $HOME/.bashrc and add
 
     export LIBVIRT_DEFAULT_URI="qemu:///system"
 
+### add virtio to an existing windows VM
+
+download Windows_VirtIO_Drivers on https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/?C=M;O=D
+
+Wizard Installation
+
+You can use an easy wizard to install all, or a selection, of VirtIO drivers.
+
+Open the Windows Explorer and navigate to the CD-ROM drive.
+Simply execute (double-click on) virtio-win-gt-x64
+Follow its instructions.
+(Optional) use the virtio-win-guest-tools wizard to install the QEMU Guest Agent and the SPICE agent for an improved remote-viewer experience.
+Reboot VM
+Manual Installation
+
+Open the Windows Explorer and navigate to the CD-ROM drive. There you can see that the ISO consists of several directories, each having sub-directories for supported OS version (for example, 2k19, 2k12R2, w7, w8.1, w10, ...). Balloon guest-agent NetKVM qxl vioscsi ...
+Navigate to the desired driver directories and respective Windows Version
+Right-click on the file with type "Setup Information"
+A context menu opens, select "Install" here.
+Repeat that process for all desired drivers
+Reboot VM.
+Downloading the Wizard in the VM
+
+You can also just download the most recent virtio-win-gt-x64.msi from https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/virtio-win-0.1.248-1/ from inside the VM, if you already have network access. Then just execute it and follow the installation process.
+
+
+
+
 ### Reference:
 
 Original guide - http://wood1978.dyndns.org/~wood/wordpress/2013/07/22/arch-linux-setup-kvm-with-virt-manager-gui/comment-page-1/
