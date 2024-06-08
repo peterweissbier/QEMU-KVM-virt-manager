@@ -145,9 +145,9 @@ Windows has a really good partition management utility built into it. Search for
 
 ---
 
-### Tweaks
+### fix qemu session
 
-Check the output of virsh uri. If it returns qemu:///session, but you're using a qemu:///system connection in Virt-Manager, change it to qemu:///system like this:
+Check the output of the command virsh uri. If it returns qemu:///session, but you're using a qemu:///system connection in Virt-Manager, change it to qemu:///system like this:
 
 edit your .bashrc file via sudo nano $HOME/.bashrc and add
 
