@@ -57,9 +57,9 @@ polkit.addRule(function(action, subject) {
 
 10. Now you can use virt-manager manager your virtual machine.
 
-#### Things to do after installing a Windows VM
+#### extensive installation guide for windows 11
 
-  * Check and install drivers on your guest Windows VM like virtio-win
+https://sysguides.com/install-a-windows-11-virtual-machine-on-kvm#0-1-configure-windows-11-virtual-hardware
 
 ---
 
