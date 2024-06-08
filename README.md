@@ -20,7 +20,7 @@
 
 5. Install `qemu`, `virt-manager`, `dnsmasq` and `iptables`:
 
-        sudo pacman -S --needed qemu virt-manager dnsmasq iptables-nft
+        sudo pacman -S --needed qemu virt-manager dnsmasq iptables-nft dmidecode
 
 6. Run and enable boot up start `libvirtd` daemon:
 
