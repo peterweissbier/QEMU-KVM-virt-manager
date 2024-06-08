@@ -53,10 +53,7 @@ polkit.addRule(function(action, subject) {
 
   * If it is `inactive` start it using:
 
-        sudo virsh net-start default
-  
-  * enable autostart
-        sudo virsh net-autostart default     
+        sudo virsh net-start default  
 
 10. Now you can use virt-manager manager your virtual machine.
 
