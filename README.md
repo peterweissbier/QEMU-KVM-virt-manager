@@ -57,9 +57,9 @@ polkit.addRule(function(action, subject) {
 
 10. Now you can use virt-manager manager your virtual machine.
 
-11. Things to do after installing a Windows VM.
+#### Things to do after installing a Windows VM
 
-  * Check and install drivers on your guest Windows VM, probably `virtio-win` is a nice place to start. 
+  * Check and install drivers on your guest Windows VM like virtio-win
 
 ---
 
