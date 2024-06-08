@@ -24,7 +24,7 @@
 
 6. Run and enable boot up start `libvirtd` daemon:
 
-        systemctl enable --now libvirtd
+        sudo systemctl enable --now libvirtd
 
 
 7. Use PolicyKit authorization create `/etc/polkit-1/rules.d/50-libvirt.rules` (before `/etc/polkit-1/rules.d/50-org.libvirt.unix.manage.rules`) as below context:
