@@ -119,6 +119,8 @@ edit your .bashrc file via sudo nano $HOME/.bashrc and add
 
     export LIBVIRT_DEFAULT_URI="qemu:///system"
 
+---
+
 ### Reference:
 
 Original guide - http://wood1978.dyndns.org/~wood/wordpress/2013/07/22/arch-linux-setup-kvm-with-virt-manager-gui/comment-page-1/
