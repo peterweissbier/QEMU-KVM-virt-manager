@@ -55,8 +55,6 @@ polkit.addRule(function(action, subject) {
 
         sudo virsh net-start default  
 
-10. Now you can use virt-manager manager your virtual machine.
-
 ---
 
 #### What to do if `default` network interface is not listed
