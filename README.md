@@ -1,63 +1,6 @@
-## instructions to get QEMU/KVM and virt-manager up and running on archlinux
-
-1. Make sure your cpu support `kvm` with below command:
-
-        grep -E "(vmx|svm)" --color=always /proc/cpuinfo
-
-2. Make sure BIOS have enable “Virtualization Technology”.
-
-3. User access to `/dev/kvm` so add your account into kvm(78) group:
-
-        sudo gpasswd -a $(whoami) kvm
-
-4. Loading kernel modules `kvm_intel` or `kvm_amd` depend on your CPU, Add module name in `/etc/modules-load.d/kvm.conf`:
-
-        kvm_intel
-
-  * Load module:
-
-        modprobe kvm_amd
-
-5. Install `qemu`, `virt-manager`, `dnsmasq` and `iptables`:
-
-        sudo pacman -S --needed qemu virt-manager dnsmasq iptables-nft dmidecode
-
-6. Run and enable boot up start `libvirtd` daemon:
-
-        sudo systemctl enable --now libvirtd
-
-
-7. Use PolicyKit authorization create `/etc/polkit-1/rules.d/50-libvirt.rules` (before `/etc/polkit-1/rules.d/50-org.libvirt.unix.manage.rules`) as below context:
-
-```
-/* Allow users in kvm group to manage the libvirt
-daemon without authentication */
-polkit.addRule(function(action, subject) {
-    if (action.id == "org.libvirt.unix.manage" &&
-        subject.isInGroup("kvm")) {
-            return polkit.Result.YES;
-    }
-});
-```
-
-8. You will need to create the libvirt group and add any users you want to have access to **libvirt** to that group:
-
-        groupadd libvirt
-    
-        sudo gpasswd -a $(whoami) libvirt
-
-
-9. Check network interface status:
-
-        sudo virsh net-list --all
-
-  * If it is `inactive` start it using:
-
-        sudo virsh net-start default  
-
+## [install QEMU/KVM & Virtual Machine Manager](https://sysguides.com/install-kvm-on-linux)
 ---
-
-## What to do if `default` network interface is not listed
+## What to do if the `default` network interface is not listed
 
    * If `virsh net-list` is not listing any network interface just reinitialize it with,
    
@@ -66,10 +9,8 @@ polkit.addRule(function(action, subject) {
    * Then just `autostart` it like so,
    
          sudo virsh net-autostart default 
-
 ---
-
-## What to do if you cannot access storage file, and get "Permission denied Error in KVM Libvirt"
+## What to do if you cannot access storage file and get "Permission denied Error in KVM Libvirt"
 
    * Step 1: Edit `/etc/libvirt/qemu.conf` file:
    
@@ -108,9 +49,7 @@ polkit.addRule(function(action, subject) {
    * Step 3: Restart libvirtd service:
 
           sudo systemctl restart libvirtd
-
 ---
-
 ## how to fix the qemu session
 
 Check the output of the command virsh uri. If it returns qemu:///session, but you're using a qemu:///system connection in Virt-Manager, change it to qemu:///system like this:
@@ -118,9 +57,7 @@ Check the output of the command virsh uri. If it returns qemu:///session, but yo
 edit your .bashrc file via sudo nano $HOME/.bashrc and add
 
     export LIBVIRT_DEFAULT_URI="qemu:///system"
-
 ---
-
 ## Reference:
 
 Original guide - http://wood1978.dyndns.org/~wood/wordpress/2013/07/22/arch-linux-setup-kvm-with-virt-manager-gui/comment-page-1/
