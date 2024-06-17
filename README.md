@@ -57,7 +57,7 @@ polkit.addRule(function(action, subject) {
 
 ---
 
-#### What to do if `default` network interface is not listed
+## What to do if `default` network interface is not listed
 
    * If `virsh net-list` is not listing any network interface just reinitialize it with,
    
@@ -69,7 +69,7 @@ polkit.addRule(function(action, subject) {
 
 ---
 
-#### What to do if you cannot access storage file, and get "Permission denied Error in KVM Libvirt"
+## What to do if you cannot access storage file, and get "Permission denied Error in KVM Libvirt"
 
    * Step 1: Edit `/etc/libvirt/qemu.conf` file:
    
@@ -111,7 +111,7 @@ polkit.addRule(function(action, subject) {
 
 ---
 
-### how to fix the qemu session
+## how to fix the qemu session
 
 Check the output of the command virsh uri. If it returns qemu:///session, but you're using a qemu:///system connection in Virt-Manager, change it to qemu:///system like this:
 
@@ -121,7 +121,7 @@ edit your .bashrc file via sudo nano $HOME/.bashrc and add
 
 ---
 
-### Reference:
+## Reference:
 
 Original guide - http://wood1978.dyndns.org/~wood/wordpress/2013/07/22/arch-linux-setup-kvm-with-virt-manager-gui/comment-page-1/
  
