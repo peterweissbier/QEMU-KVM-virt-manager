@@ -1,5 +1,9 @@
 ## [install QEMU/KVM & Virtual Machine Manager](https://sysguides.com/install-kvm-on-linux)
 ---
+## enable TPM v2.0 support
+install the package swtpm
+
+---
 ## What to do if the `default` network interface is not listed
 
    * If `virsh net-list` is not listing any network interface just reinitialize it with,
